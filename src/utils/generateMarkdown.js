@@ -11,8 +11,9 @@ function renderLicenseBadge(license) {
 }
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+
 function renderLicenseLink(license) {
+  // If there is no license, return an empty string
   if (!license){
     return '';
   }
@@ -22,6 +23,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  // use if statement to check if license exists
   if (!license) return '';
   return `## License
 This project is licensed under the ${license} license.  
@@ -29,7 +31,7 @@ ${renderLicenseLink(license)}`;
 }
 
 // TODO: Create a function to generate markdown for README
-// essnetially creating the text that the read me is going to have 
+// create the structure of the readme file and use the answers from the inquirer prompt to fill in the the readme
 function generateMarkdown(data) {
   return `# ${data.title}
 
