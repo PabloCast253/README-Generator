@@ -3,6 +3,8 @@ import inquirer from "inquirer";
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
 // TODO: Create an array of questions for user input
+// array of questions for inquirer to ask
+// the answers to these questions are going to be used to write the generated README.MD file
 const questions = [{
     type: "input",
     name: "title",
@@ -73,12 +75,15 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    //use fs.writeFile to make the file with the with the data retrived from the inquirer prompt
+    // if the file was succesfuly created console log a message to let you know the file was generated 
     fs.writeFile(fileName, data, (err) =>
         err ? console.error(err) : console.log("README.md generated!")
     );
 }
 
 // TODO: Create a function to initialize app
+// this function will init inquirer to prompt 
 function init() {
     inquirer
         .prompt(questions)
